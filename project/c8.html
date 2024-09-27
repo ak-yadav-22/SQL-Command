@@ -1,0 +1,54 @@
+<html>
+    <head>
+    </head>
+    <body style="background-color: black; ">
+        <center><div class="header">
+            <h1 style="color: rgb(0, 255, 55)">CODE:</h1>
+        </center>
+    </div>
+        <hr style="color: aliceblue">
+        <br><br>
+        <div class="content" style="color: rgb(0, 255, 55); font-size: larger;">
+            <pre><code>
+                    #include &lt;stdio.h&gt;
+                    #include &lt;string.h&gt;
+                    struct Employee {
+                    char name[50];
+                    char address[100];
+                    int age;
+                    float salary;
+                    };
+                    int main() {
+                    FILE *fp1, *fp2;
+                    struct Employee employee;
+                    // Open the input file for reading
+                    fp1 = fopen("STAFF.TXT", "r");
+                    if (fp1 == NULL) {
+                    printf("Error opening file!\n");
+                    return 1;
+                    }
+                    // Open the output file for writing
+                    fp2 = fopen("KATHMANDU.TXT", "w");
+                    if (fp2 == NULL) {
+                    printf("Error opening file!\n");
+                    return 1;
+                    }
+                    // Read and write employee records
+                    while (fscanf(fp1, "%s %s %d %f", employee.name, employee.address, &employee.age,
+                    &employee.salary) == 4) {
+                    if (strcmp(employee.address, "Kathmandu") == 0) {
+                    fprintf(fp2, "%s %s %d %.2f\n", employee.name, employee.address, employee.age,
+                    employee.salary);
+                    }
+                    }
+                    // Close the files
+                    fclose(fp1);
+                    
+                    fclose(fp2);
+                    return 0;
+                    }
+            </code>
+        </pre>
+        </div>
+    </body>
+    </html>

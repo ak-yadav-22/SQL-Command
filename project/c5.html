@@ -1,0 +1,47 @@
+<html>
+    <head>
+    </head>
+    <body style="background-color: black; ">
+        <center><div class="header">
+            <h1 style="color: rgb(0, 255, 55)">CODE:</h1>
+        </center>
+    </div>
+        <hr style="color: aliceblue">
+        <br><br>
+        <div class="content" style="color: rgb(0, 255, 55); font-size: larger;">
+            <pre><code>
+                #include &lt;stdio.h&gt;
+                    int main() {
+                    FILE *fp;
+                    char name[50], address[100];
+                    int age;
+                    float salary;
+                    // Create a new file
+                    fp = fopen("STAFF.TXT", "w");
+                    if (fp == NULL) {
+                    printf("Error opening file!\n");
+                    return 1;
+                    }
+                    
+                    // Input employee data
+                    for (int i = 0; i &lt; 10; i++) {
+                    printf("Enter employee %d's name: ", i + 1);
+                    scanf("%s", name);
+                    printf("Enter employee %d's address: ", i + 1);
+                    scanf("%s", address);
+                    printf("Enter employee %d's age: ", i + 1);
+                    scanf("%d", &age);
+                    printf("Enter employee %d's salary: ", i + 1);
+                    scanf("%f", &salary);
+                    // Write employee data to the file
+                    fprintf(fp, "%s %s %d %f\n", name, address, age, salary);
+                    }
+                    // Close the file
+                    fclose(fp);
+                    return 0;
+                    }
+            </code>
+        </pre>
+        </div>
+    </body>
+    </html>

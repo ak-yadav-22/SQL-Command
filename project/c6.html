@@ -1,0 +1,48 @@
+<html>
+    <head>
+    </head>
+    <body style="background-color: black; ">
+        <center><div class="header">
+            <h1 style="color: rgb(0, 255, 55)">CODE:</h1>
+        </center>
+    </div>
+        <hr style="color: aliceblue">
+        <br><br>
+        <div class="content" style="color: rgb(0, 255, 55); font-size: larger;">
+            <pre><code>
+                    #include &lt;stdio.h&gt;
+                    struct Employee {
+                    char name[50];
+                    char address[100];
+                    int age;
+                    float salary;
+                    };
+                    int main() {
+                    FILE *fp;
+                    struct Employee employee;
+                    // Open the file for reading
+                    fp = fopen("STAFF.TXT", "r");
+                    if (fp == NULL) {
+                    printf("Error opening file!\n");
+                    
+                    return 1;
+                    }
+                    // Read and display employee records
+                    while (fscanf(fp, "%s %s %d %f", employee.name, employee.address, &employee.age,
+                    &employee.salary) == 4) {
+                    if (employee.salary > 15000 && employee.age &lt; 25) {
+                    printf("Name: %s\n", employee.name);
+                    printf("Address: %s\n", employee.address);
+                    printf("Age: %d\n", employee.age);
+                    printf("Salary: %.2f\n\n", employee.salary);
+                    }
+                    }
+                    // Close the file
+                    fclose(fp);
+                    return 0;
+                    }
+            </code>
+        </pre>
+        </div>
+    </body>
+    </html>

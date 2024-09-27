@@ -1,0 +1,45 @@
+<html>
+    <head>
+    </head>
+    <body style="background-color: black; ">
+        <center><div class="header">
+            <h1 style="color: rgb(0, 255, 55)">CODE:</h1>
+        </center>
+    </div>
+        <hr style="color: aliceblue">
+        <br><br>
+        <div class="content" style="color: rgb(0, 255, 55); font-size: larger;">
+            <pre><code>
+                #include &lt;stdio.h&gt;
+                int main() {
+                FILE *fp;
+                char ch = 'A';
+                // Create a new file
+                fp = fopen("data.txt", "w");
+                if (fp == NULL) {
+                printf("Error opening file!\n");
+                return 1;
+                }
+                // Write a character to the file
+                putc(ch, fp);
+                // Close the file
+                fclose(fp);
+                // Open the file again for reading
+                fp = fopen("data.txt", "r");
+                if (fp == NULL) {
+                printf("Error opening file!\n");
+                return 1;
+                }
+                // Read the character from the file
+                ch = getc(fp);
+                printf("Character read: %c\n", ch);
+                // Close the file
+                fclose(fp);
+                return 0;
+                
+                }
+            </code>
+        </pre>
+        </div>
+    </body>
+    </html>
